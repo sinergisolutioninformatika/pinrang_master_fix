@@ -1,0 +1,323 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"required\tAttr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "resources/views/kependudukan/kelahiran/view.blade.php",
+			"settings":
+			{
+				"buffer_size": 16779,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/kependudukan/kartukeluarga/view.blade.php",
+			"settings":
+			{
+				"buffer_size": 18640,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 296.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"terminal",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"php artisan migrate"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/daushoer/dss",
+		"/Users/daushoer/dss/app",
+		"/Users/daushoer/dss/app/Http",
+		"/Users/daushoer/dss/app/Http/Controllers",
+		"/Users/daushoer/dss/app/Http/Controllers/Auth",
+		"/Users/daushoer/dss/resources",
+		"/Users/daushoer/dss/resources/views",
+		"/Users/daushoer/dss/resources/views/kependudukan",
+		"/Users/daushoer/dss/resources/views/kependudukan/kartukeluarga",
+		"/Users/daushoer/dss/resources/views/kependudukan/kawin",
+		"/Users/daushoer/dss/resources/views/kependudukan/kelahiran",
+		"/Users/daushoer/dss/resources/views/kependudukan/penduduk"
+	],
+	"file_history":
+	[
+		"/Users/daushoer/dss/resources/views/kependudukan/kawin/view.blade.php",
+		"/Users/daushoer/dss/resources/views/kependudukan/kartukeluarga/view.blade.php",
+		"/Users/daushoer/dss/app/Http/Controllers/kelahiranController.php",
+		"/Users/daushoer/dss/app/Http/Controllers/kawinController.php",
+		"/Users/daushoer/dss/app/Http/Controllers/kartukeluargaController.php",
+		"/Users/daushoer/dss/resources/views/kependudukan/kelahiran/home.blade.php",
+		"/Users/daushoer/dss/app/Http/Controllers/pendudukController.php",
+		"/Users/daushoer/dss/resources/views/kependudukan/penduduk/view.blade.php",
+		"/Users/daushoer/dss/resources/views/kependudukan/penduduk/home.blade.php",
+		"/Users/daushoer/dss/resources/views/pendidikan/kondisiSD/home.blade.php",
+		"/Users/daushoer/dss/routes/web.php",
+		"/Users/daushoer/dss/app/Http/Controllers/kunjunganController.php",
+		"/Users/daushoer/dss/resources/views/perpusarsip/kunjungan/view.blade.php",
+		"/Users/daushoer/dss/app/Http/Controllers/Auth/LoginController.php",
+		"/Users/daushoer/dss/app/Http/Controllers/penerbitanizinController.php",
+		"/Users/daushoer/dss/app/Http/Controllers/kondisiSDController.php",
+		"/Users/daushoer/dss/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+		"/Users/daushoer/dss/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+		"/Users/daushoer/sppk/resources/views/layouts/app.blade.php",
+		"/Users/daushoer/sppk/resources/views/layouts/admin.blade.php",
+		"/Users/daushoer/sppk/app/User.php",
+		"/Users/daushoer/sppk/app/Http/Controllers/Admin/penggunaController.php",
+		"/Users/daushoer/sppk/resources/views/pendidikan/home.blade.php",
+		"/Users/daushoer/sppk/resources/views/pendidikan/bangunanSD/home.blade.php",
+		"/Users/daushoer/sppk/resources/views/home.blade.php",
+		"/Users/daushoer/sppk/sppk.sublime-project",
+		"/Users/daushoer/sppk/resources/views/admin/pengguna/home.blade.php",
+		"/Users/daushoer/sppk/routes/web.php",
+		"/Users/daushoer/sppk/resources/views/auth/register.blade.php",
+		"/Users/daushoer/sppk/app/Http/Controllers/Auth/RegisterController.php",
+		"/Users/daushoer/sppk/resources/views/admin/pengguna/add.blade.php",
+		"/Users/daushoer/sppk/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authorize.php",
+		"/Users/daushoer/sppk/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
+		"/Users/daushoer/sppk/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php",
+		"/Users/daushoer/sppk/resources/views/admin/pengguna/show.blade.php",
+		"/Users/daushoer/sppk/resources/views/layouts/menu.blade.php",
+		"/Users/daushoer/sppk/public/menu_admin",
+		"/Users/daushoer/admin-sppk/app/Providers/AppServiceProvider.php",
+		"/Users/daushoer/sppk/database/migrations/2018_08_03_040257_create_skpds_table.php",
+		"/Users/daushoer/sppk/resources/views/auth/login.blade.php",
+		"/Users/daushoer/sppk/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/Users/daushoer/sppk/app/Models/Master/skpd.php",
+		"/Users/daushoer/sppk/app/Http/Controllers/Pendidikan/bangunanSDController.php",
+		"/Users/daushoer/sppk/database/migrations/2018_07_31_140753_create_kecamatans_table.php",
+		"/Users/daushoer/sppk/database/seeds/kecamatan.php",
+		"/Users/daushoer/sppk/app/Models/Master/kecamatan.php",
+		"/Users/daushoer/sppk/database/migrations/2018_07_31_140623_create_bangunan_sds_table.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"kependudu",
+			"txtHint",
+			"..."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "resources/views/kependudukan/kelahiran/view.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3311,
+								3311
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/kependudukan/kartukeluarga/view.blade.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 18640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "dss.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"router",
+				"vendor/laravel/framework/src/Illuminate/Routing/Router.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/admin-sppk/admin.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
