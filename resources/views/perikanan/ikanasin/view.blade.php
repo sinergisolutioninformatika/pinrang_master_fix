@@ -74,7 +74,7 @@
                     <td style="text-align: center">{{$dataM->totalLaut}}</td>
                     <td style="text-align: center">{{$dataM->totalDarat}}</td>
                     <td>
-                      <a href="#" data-toggle="modal" data-target="#myModal" onclick="showUser({{$dataM->id}})">
+                      <a href="#" data-toggle="modal" data-target="#myModal" onclick="showUser({{$dataM->ta}})">
                         <img src="/image/view.png" alt="">
                       </a>
                     </td>
@@ -121,7 +121,7 @@
                   document.getElementById("txtHint").innerHTML = this.responseText;
               }
           };
-          xmlhttp.open("GET","/modals/perikanan/getikanasin.php?q="+str,true);
+          xmlhttp.open("GET","{{ url('perikanan/ikanasin/detail') }}"+'/'+str,true);
           xmlhttp.send();
       }
   }

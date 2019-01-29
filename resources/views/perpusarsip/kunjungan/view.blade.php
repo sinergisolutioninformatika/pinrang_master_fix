@@ -120,7 +120,7 @@
                   document.getElementById("txtHint").innerHTML = this.responseText;
               }
           };
-          xmlhttp.open("GET"," {{ url('perpusarsip/kunjungan/detail') }}  "+'/'+str,true);
+          xmlhttp.open("GET","{{ url('perpusarsip/kunjungan/detail') }}"+'/'+str,true);
           xmlhttp.send();
       }
   }

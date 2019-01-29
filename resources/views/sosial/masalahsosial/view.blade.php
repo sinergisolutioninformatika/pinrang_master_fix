@@ -46,7 +46,7 @@
         </ul>
         <div class="tab-content">
           <div id="home" class="container tab-pane active"><br>
-              <canvas id="airlimbah" width="800px" height="400px"></canvas>
+              <canvas id="masalahsosial" width="800px" height="400px"></canvas>
           </div>
           <div id="menu1" class="container tab-pane fade"><br>
             <table class="table table-striped">
@@ -54,7 +54,8 @@
               <tr>
                 <thead>
                   <th>No.</th>
-                  <th>Total Masalah</th>
+                  <th>Tahun</th>
+                  <th>Jumlah Masalah</th>
                   <th>Proses</th>
                 </thead>
               </tr>
@@ -62,15 +63,19 @@
                 $nomor = 1;
                 foreach ($dataMaster as $dataM) {
                     ?>
-                <form action="/pupr/airlimbah/destroy/{{$dataM->id}}" id="form{{$dataM->id}}" method="post">
+                <form action="/sosial/masalahsosial/destroy/{{$dataM->id}}" id="form{{$dataM->id}}" method="post">
                   <tr>
-                    <input type="hidden" name="airlimbahMaster{{$dataM->id}}" value="">
+                    <input type="hidden" name="masalahsosialMaster{{$dataM->id}}" value="">
                     <td>{{$nomor}}</td>
                     <td>{{$dataM->ta}}</td>
-                    <td style="text-align: center">{{$dataM->totalUnit}}</td>
+                    <td style="text-align: center">{{$dataM->totalMasalah}}</td>
                     <td>
                       <a href="#" data-toggle="modal" data-target="#myModal" onclick="showUser({{$dataM->ta}})">
                         <img src="/image/view.png" alt="">
+                      </a>
+                      <a href="/sosial/masalahsosial/edit/{{$dataM->id}}"><img src="/image/edit.png" alt=""></a>
+                      <a href="#" onclick="return confirm_delete('Are you sure?','form{{$dataM->id}}')">
+                        <img src="/image/delete.png" alt="">
                       </a>
                     </td>
                   </tr>
@@ -85,6 +90,11 @@
           </div>
         </div>
     </div>
+    <div class="card-footer">
+      <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Input Data Baru
+      </button>
+    </div>
   </div>
 <br>
     <!-- input data rekap baru -->
@@ -94,24 +104,24 @@
           <b>Input Data Rekap Baru</b>
         </div>
         <div class="card-body">
-          <form class="form-group" action="/pupr/airlimbah/store" method="post">
+          <form class="form-group" action="/sosial/masalahsosial/store" method="post">
             <table class="table table-striped table-hover">
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Kecamatan</th>
-                    <th>Jumlah Unit</th>
+                    <th>Nama masalahsosial</th>
+                    <th>Jumlah Masalah</th>
                   </tr>
               </thead>
                 <?php
                   $nomor = 1;
-                  foreach ($dataKecamatan as $dataK) {
+                  foreach ($datamasalahsosial as $dataK) {
                       ?>
                     <tr>
                       <td>{{$nomor}}</td>
-                      <td nowrap>{{$dataK->nmaKecamatan}}</td>
+                      <td nowrap>{{$dataK->nmaMasalah}}</td>
                       <td>
-                        <input type="number" id="jmlUnit{{$nomor}}" class="form-control" name="jmlUnit{{$nomor}}" value="0">
+                        <input type="number" id="jmlMasalah{{$nomor}}" class="form-control" name="jmlMasalah{{$nomor}}" value="0">
                       </td>
                     </tr>
                 <?php
@@ -122,7 +132,7 @@
                    <td></td>
                    <td><b>Total</b></td>
                    <td>
-                     <input type="number" id="totalUnit" class="form-control" name="totalUnit" value="0" readonly>
+                     <input type="number" id="totalMasalah" class="form-control" name="totalMasalah" value="0" readonly>
                    </td>
                  </tr>
                  {{csrf_field()}}
@@ -165,7 +175,7 @@
                   document.getElementById("txtHint").innerHTML = this.responseText;
               }
           };
-          xmlhttp.open("GET","{{ url('pupr/airlimbah/detail') }}"+'/'+str,true);
+          xmlhttp.open("GET","{{ url('sosial/masalahsosial/detail') }}"+'/'+str,true);
           xmlhttp.send();
       }
   }
@@ -176,107 +186,71 @@
 
     <?php
       $nopu = 1;
-      foreach ($dataKecamatan as $pus) {
+      foreach ($datamasalahsosial as $pus) {
      ?>
-      $("#jmlUnit{{$nopu}}").keyup(function() {
+      $("#jmlMasalah{{$nopu}}").keyup(function() {
         hc = 0;
-        tk = 0;
         <?php
-             $no = 1;
-             foreach ($dataKecamatan as $pk){ ?>
-               tk = tk + Number($("#jmlUnit{{$no}}").val());
-           <?php
-             $no ++;
-           } ?>
-          $("#totalUnit").val(tk);
-        });
-        $("#jmlUnit{{$nopu}}").change(function() {
-          hc = 0;
-          tk = 0;
-          <?php
-               $no = 1;
-               foreach ($dataKecamatan as $pk){ ?>
-                 tk = tk + Number($("#jmlUnit{{$no}}").val());
-             <?php
-               $no ++;
-             } ?>
-            $("#totalUnit").val(tk);
-          });
+          $nojk = 1;
+          foreach ($datamasalahsosial as $pk){ ?>
+            hc = hc + Number($("#jmlMasalah{{$nojk}}").val());
+        <?php
+          $nojk ++;
+        } ?>
+          $("#totalMasalah").val(hc);
+      });
+      $("#jmlMasalah{{$nopu}}").change(function() {
+        hc = 0;
+        <?php
+          $nojk = 1;
+          foreach ($datamasalahsosial as $pk){ ?>
+            hc = hc + Number($("#jmlMasalah{{$nojk}}").val());
+        <?php
+          $nojk ++;
+        } ?>
+          $("#totalMasalah").val(hc);
+      });
         <?php
           $nopu ++;
         }
          ?>
      });
   </script>
-  <script>
-  var ctx = document.getElementById("airlimbah");
-   var myLineChart = new Chart(ctx, {
-    type: 'line',
+<script>
+  var ctx = document.getElementById("masalahsosial");
+  var myLineChart = new Chart(ctx, {
+    type: 'bar',
     data: {
       datasets: [{
-        borderWidth: 3,
+        borderWidth: 1,
         label: ['Jumlah'],
-        borderColor: ['rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)',
-                       'rgba(54, 162, 235, 0.5)'],
+        borderColor: ['rgba(54, 162, 235, 0.7)',
+                      'rgba(54, 162, 235, 0.7)',
+                      'rgba(54, 162, 235, 0.7)',
+                      'rgba(54, 162, 235, 0.7)',
+                      'rgba(54, 162, 235, 0.7)',
+                      'rgba(54, 162, 235, 0.7)',
+                      'rgba(54, 162, 235, 0.7)'],
         backgroundColor:['rgba(54, 162, 235, 0.5)',
                          'rgba(54, 162, 235, 0.5)',
                          'rgba(54, 162, 235, 0.5)',
                          'rgba(54, 162, 235, 0.5)',
                          'rgba(54, 162, 235, 0.5)',
                          'rgba(54, 162, 235, 0.5)',
-                         'rgba(54, 162, 235, 0.5)',
-                         'rgba(54, 162, 235, 0.5)',
-                         'rgba(54, 162, 235, 0.5)',
-                         'rgba(54, 162, 235, 0.5)',
-                         'rgba(54, 162, 235, 0.5)',
                          'rgba(54, 162, 235, 0.5)'],
-        pointBackgroundColor:['rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)',
-                              'rgba(54, 162, 235, 0.5)'],
-        pointHoverBorderColor: ['rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)',
-                               'rgba(54, 162, 235, 0.7)'],
-        pointBorderWidth:2,
-        fill:false,
+        // load data
         data:
         <?php
                $kata = '[';
                foreach ($dataChart as $jkg) {
-                   $kata = $kata . $jkg->totalUnit . ',';
+                   $kata = $kata . $jkg->totalMasalah . ',';
                }
                $kata = $kata . "]";
                $kata = str_replace(",]", "]", $kata);
                echo $kata;
               ?>
       }],
+      // define label
       <?php
         $katax = "['";
         foreach ($dataChart as $jkg) {
@@ -288,27 +262,27 @@
       labels:
         <?php echo $katax; ?>
               },
-    options:{
-      title: {
-             display: true,
-             position: 'top',
-             fontsize: 14,
-             text: 'Grafik Jumlah Fasilitas Pengolahan Air Limbah'
-         },
-      animation: {
-        duration: 2000, // general animation time
-        },
-        hover: {
-             animationDuration: 1000, // duration of animations when hovering an item
-         },
-          scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero:true
-                }
-              }]
-            },
-          }
-        });
-  </script>
+              options:{
+                title: {
+                       display: true,
+                       position: 'top',
+                       fontsize: 14,
+                       text: 'Grafik Data Penyandang Masalah Kesejahteraan Sosial'
+                   },
+                animation: {
+                  duration: 2000, // general aniCeraion time
+                  },
+                  hover: {
+                       animationDuration: 1000, // duration of aniCeraions when hovering an item
+                   },
+                    scales: {
+                        yAxes: [{
+                          ticks: {
+                            beginAtZero:true
+                          }
+                        }]
+                      },
+                    }
+                  });
+</script>
 @endsection
