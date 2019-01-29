@@ -45,7 +45,7 @@ class internetController extends Controller
    {
      $dataKecamatan = kecamatan::all();
      $kondi = internetMaster::create([
-        'ta' => $request->session()->get('tahun_anggaran'),
+        'ta' => session()->get('thn_anggaran'),
         'totalDesaterlayani' => $request->totalDesaterlayani,
         'totalDesabelumterlayani' => $request->totalDesabelumterlayani,
       ]);
