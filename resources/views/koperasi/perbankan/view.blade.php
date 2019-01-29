@@ -61,7 +61,7 @@
                   <th>Bank Swasta Nasional</th>
                   <th>Bank Asing Campuran</th>
                   <th>Bank Perkreditan Rakyat</th>
-                  <th>Proses</th>
+           
                 </thead>
               </tr>
               <?php
