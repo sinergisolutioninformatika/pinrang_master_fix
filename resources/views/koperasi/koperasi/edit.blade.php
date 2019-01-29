@@ -257,7 +257,7 @@ $(document).ready(function() {
           ksd = 0;
           <?php
             $nojk = 1;
-            foreach ($daftar_koperasi as $pk){ ?>
+            foreach ($dataKoperasi as $pk){ ?>
               ksd = ksd + Number($("#jmlAktif{{$nojk}}").val());
           <?php
             $nojk ++;
@@ -268,7 +268,7 @@ $(document).ready(function() {
             thetotalKoperasi = 0;
             <?php
               $nojk = 1;
-              foreach ($daftar_koperasi as $pk){ ?>
+              foreach ($dataKoperasi as $pk){ ?>
                 thetotalKoperasi = thetotalKoperasi + Number($("#jmlKoperasi{{$nojk}}").val());
             <?php
               $nojk ++;
@@ -279,7 +279,7 @@ $(document).ready(function() {
             ksd = 0;
             <?php
               $nojk = 1;
-              foreach ($daftar_koperasi as $pk){ ?>
+              foreach ($dataKoperasi as $pk){ ?>
                 ksd = ksd + Number($("#jmlTidakaktif{{$nojk}}").val());
             <?php
               $nojk ++;
@@ -290,7 +290,7 @@ $(document).ready(function() {
               thetotalKoperasi = 0;
               <?php
                 $nojk = 1;
-                foreach ($daftar_koperasi as $pk){ ?>
+                foreach ($dataKoperasi as $pk){ ?>
                   thetotalKoperasi = thetotalKoperasi + Number($("#jmlKoperasi{{$nojk}}").val());
               <?php
                 $nojk ++;

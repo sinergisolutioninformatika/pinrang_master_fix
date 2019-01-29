@@ -11,7 +11,7 @@ class koperasiMaster extends Model
                          'totalKoperasi',
                          'totalAktif',
                          'totalTidakaktif'];
-  protected $table = 'koperasiMasters';
+  protected $table = 'koperasimasters';
   public function koperasiDetail()
   {
     return $this->hasMany(koperasiDetail::class,'koperasiMaster_id', 'id');

@@ -13,13 +13,13 @@ class koperasiDetail extends Model
                          'jmlAktif',
                          'jmlTidakaktif'];
 
-  protected $table = 'koperasiDetails';
+  protected $table = 'koperasidetails';
   public function koperasiMaster()
   {
     $this->belongsTo(koperasiMaster::class);
   }
 
-  public function kecamatan(){
-    return $this->belongsTo('App\Kecamatan', 'kecamatan_id', 'id');
+  public function koperasi(){
+    return $this->belongsTo('App\Models\koperasi\daftar_koperasi', 'koperasi_id', 'id');
   }
 }

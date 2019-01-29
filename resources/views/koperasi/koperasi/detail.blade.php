@@ -18,7 +18,7 @@
         @foreach ($data->koperasiDetail as $item)
             <tr>
             <td>{{ $no++ }}</td>
-            <td>{{ $item->kecamatan->nmaKecamatan }}</td>
+            <td>{{ $item->koperasi->nmaKoperasi }}</td>
             <td>{{ $item->jmlKoperasi }}</td>
             <td>{{ $item->jmlAktif }}</td>
             <td>{{ $item->jmlTidakaktif }}</td>
