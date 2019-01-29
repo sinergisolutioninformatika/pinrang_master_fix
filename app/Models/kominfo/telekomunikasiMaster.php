@@ -14,6 +14,6 @@ class telekomunikasiMaster extends Model
   protected $table = 'telekomunikasiMasters';
   public function telekomunikasiDetail()
   {
-    $this->hasMany(telekomunikasiDetail::class);
+     return  $this->hasMany(telekomunikasiDetail::class,'telekomunikasiMaster_id','id');
   }
 }

@@ -45,7 +45,7 @@ class telekomunikasiController extends Controller
    {
      $dataKecamatan = kecamatan::all();
      $kondi = telekomunikasiMaster::create([
-        'ta' => $request->session()->get('tahun_anggaran'),
+        'ta' => session()->get('thn_anggaran'),
         'totalDesaterlayani' => $request->totalDesaterlayani,
         'totalDesabelumterlayani' => $request->totalDesabelumterlayani,
         'totalBTS' => $request->totalBTS,
@@ -124,5 +124,11 @@ class telekomunikasiController extends Controller
       $cMaster->delete();
       $deletedRows = telekomunikasiDetail::where('telekomunikasiMaster_id', $xdj)->delete();
       return redirect('/kominfo/telekomunikasi');
+    }
+
+    public function detail($id){
+      $model = telekomunikasiMaster::where('ta',$id)->first();
+
+      echo view('kominfo.telekomunikasi.detail',['ta'=>$id,'data'=>$model,'no'=>1]);
     }
 }

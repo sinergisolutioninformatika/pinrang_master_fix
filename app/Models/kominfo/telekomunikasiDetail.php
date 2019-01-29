@@ -19,4 +19,8 @@ class telekomunikasiDetail extends Model
   {
     $this->belongsTo(telekomunikasiMaster::class);
   }
+
+  public function kecamatan(){
+    return $this->belongsTo('App\Kecamatan','kecamatan_id','id');
+  }
 }

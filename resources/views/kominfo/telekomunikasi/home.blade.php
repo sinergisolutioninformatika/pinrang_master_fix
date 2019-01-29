@@ -78,7 +78,7 @@
                     <td style="text-align: center">{{$dataM->totalDesabelumterlayani}}</td>
                     <td style="text-align: center">{{$dataM->totalBTS}}</td>
                     <td>
-                      <a href="#" data-toggle="modal" data-target="#myModal" onclick="showUser({{$dataM->id}})">
+                      <a href="#" data-toggle="modal" data-target="#myModal" onclick="showUser({{$dataM->ta}})">
                         <img src="/image/view.png" alt="">
                       </a>
                       <a href="/kominfo/telekomunikasi/edit/{{$dataM->id}}"><img src="/image/edit.png" alt=""></a>
@@ -197,7 +197,7 @@
                   document.getElementById("txtHint").innerHTML = this.responseText;
               }
           };
-          xmlhttp.open("GET","/modals/kominfo/gettelekomunikasi.php?q="+str,true);
+          xmlhttp.open("GET","{{ url('kominfo/telekomunikasi/detail') }}"+'/'+str,true);
           xmlhttp.send();
       }
   }
